@@ -25,7 +25,7 @@ setup(
 
     # Insert dependencies list here
     install_requires=[
-        'numpy',
+        'numpy', 'pytypes'
     ],
     setup_requires=["setuptools-scm"],
     extras_require={
