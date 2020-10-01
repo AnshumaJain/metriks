@@ -80,6 +80,8 @@ def test_confusion_matrix_at_k_with_errors():
         )
 
     print(result)
+    print(type(result))
+    print(type(result[0]))
 
 
 def test_confusion_matrix_at_k_perfect():
