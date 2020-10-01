@@ -15,42 +15,42 @@ def check_arrays(y_true: np.ndarray, y_prob: np.ndarray) -> None:
     # Make sure that inputs this conforms to our expectations
     assert isinstance(y_true, np.ndarray), AssertionError(
         'Expect y_true to be a {expected}. Got {actual}'
-            .format(expected=np.ndarray, actual=type(y_true))
+        .format(expected=np.ndarray, actual=type(y_true))
     )
 
     assert isinstance(y_prob, np.ndarray), AssertionError(
         'Expect y_prob to be a {expected}. Got {actual}'
-            .format(expected=np.ndarray, actual=type(y_prob))
+        .format(expected=np.ndarray, actual=type(y_prob))
     )
 
     assert y_true.shape == y_prob.shape, AssertionError(
         'Shapes must match. Got y_true={true_shape}, y_prob={prob_shape}'
-            .format(true_shape=y_true.shape, prob_shape=y_prob.shape)
+        .format(true_shape=y_true.shape, prob_shape=y_prob.shape)
     )
 
     assert len(y_true.shape) == 2, AssertionError(
         'Shapes should be of rank 2. Got {rank}'
-            .format(rank=len(y_true.shape))
+        .format(rank=len(y_true.shape))
     )
 
     uniques = np.unique(y_true)
     assert len(uniques) <= 2, AssertionError(
         'Expected labels: [0, 1]. Got: {uniques}'
-            .format(uniques=uniques)
+        .format(uniques=uniques)
     )
 
 
 @typechecked
-def check_k(n_items: int, k: int):
+def check_k(n_items: int, k: int) -> None:
     # Make sure that inputs conform to our expectations
     assert isinstance(k, int), AssertionError(
         'Expect k to be a {expected}. Got {actual}'
-            .format(expected=int, actual=type(k))
+        .format(expected=int, actual=type(k))
     )
 
     assert 0 <= k <= n_items, AssertionError(
         'Expect 0 <= k <= {n_items}. Got {k}'
-            .format(n_items=n_items, k=k)
+        .format(n_items=n_items, k=k)
     )
 
 
@@ -74,7 +74,7 @@ def recall_at_k(y_true: np.ndarray, y_prob: np.ndarray, k: int) -> float:
             sorted order by y_prob
 
     Returns:
-        recall (~np.ndarray): The recall at k
+        recall (float): The recall at k
 
     Example:
     >>> y_true = np.array([
@@ -141,7 +141,7 @@ def precision_at_k(y_true: np.ndarray, y_prob: np.ndarray, k: int) -> float:
             sorted order by y_prob
 
     Returns:
-        precision_k (~np.ndarray): The precision at k
+        precision_k (float): The precision at k
 
     Example:
     >>> y_true = np.array([
