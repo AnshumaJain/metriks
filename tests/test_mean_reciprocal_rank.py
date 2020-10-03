@@ -117,7 +117,7 @@ def test_mrr_zeros():
     np.testing.assert_allclose(result, expected)
 
     print(result)
-    print(type(result))
+
 
 if __name__ == '__main__':
     test_mrr_wikipedia()

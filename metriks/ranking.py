@@ -4,8 +4,9 @@ Ranking
 Metrics to use for ranking models.
 """
 
-import numpy as np
 from typing import Tuple
+
+import numpy as np
 from numpy.ma import MaskedArray
 from pytypes import typechecked
 

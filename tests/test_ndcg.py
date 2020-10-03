@@ -207,6 +207,7 @@ def test_ndcg_0_over_0_error():
 
     np.testing.assert_allclose([actual], [expected])
 
+
 if __name__ == '__main__':
     test_ndcg_perfect()
     test_ndcg_errors()

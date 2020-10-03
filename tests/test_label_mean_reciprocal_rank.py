@@ -16,6 +16,7 @@ def test_label_mrr_with_errors():
     expected = np.ma.array([1.0, (7/4) / 3, 2/3, 1/3])
 
     np.testing.assert_allclose(result, expected)
+
     print(result)
 
 
